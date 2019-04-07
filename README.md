@@ -1,7 +1,7 @@
 ## POINT 
 This repository contains an official pytorch implementation for the following paper:<br>
 [Learning to Learn Relation for Important People Detection in Still Images (CVPR 2019)](http://weihonglee.github.io/Projects/POINT/POINT.htm). [Wei-Hong Li](https://weihonglee.github.io/), Fa-Ting Hong, [Wei-Shi Zheng](http://isee.sysu.edu.cn/~zhwshi/)
-![avatar](figures/FrameworkDetail.pdf)
+![avatar](figures/FrameworkDetail.jpg)
 POINT, deep im**PO**rtance relat**I**on **N**e**T**work, is the first to investigate deep learning for exploring and encoding the relation features and exploiting them for important ppeople detection and achieves state-of-the-art performance on two public datasets for which verify its efficacy for important people detection.
 <!--TODO-->
 ### **Citation**
@@ -42,7 +42,7 @@ As we mentioned in the paper, we use the interior and exterior patches and the l
 The picture below is an illustration of extracting the exterior patch on the MS Dataset (left) and the NCAA Dataset (right).
 
 
-<img src=figures/Exterior_MS.pdf height="195">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=figures/Exterior_NCAA.pdf height="195">
+<img src=figures/Exterior_MS.jpg height="195">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=figures/Exterior_NCAA.jpg height="195">
 
 
 ### **Train**
