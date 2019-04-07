@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## POINT 
 This repository contains an official pytorch implementation for the following paper:<br>
 [Learning to Learn Relation for Important People Detection in Still Images (CVPR 2019)](http://weihonglee.github.io/Projects/POINT/POINT.htm). [Wei-Hong Li](https://weihonglee.github.io/), Fa-Ting Hong, [Wei-Shi Zheng](http://isee.sysu.edu.cn/~zhwshi/)
@@ -32,7 +31,7 @@ Download the [MS/NCAA Dataset](https://weihonglee.github.io/Projects/PersonRank.
         - data
         - images
         - README.md
-### Data Prepare**
+### **Data Prepare**
 
 As we mentioned in the paper, we use the interior and exterior patches and the location heat map. To train the POINT, we first extract those patches from the original images. As the detectors used to detect persons in MS Dataset and NCAA Dataset are different, we provide two script to extract those patches:
 
@@ -67,13 +66,8 @@ To test the trained model, we provide a script to evaluate the important people 
 
 We provide our [trained models](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/Ej3oCyjKp65JnLb_auoNgZ8BuwPuDTiMqzHN6YbjNfTUow?e=F8lcOl) (both on the MS Dataset and NCAA Dataset) and you can use the trained model directly.
 
-### Results
+### **Results**
 
 We also provide [results (CMC)](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/EkwsFYZPPNpJsYR1DOIkIL4BqAmNqnpoGU9GEtMrqXDx2Q?e=RWiq68) of compared methods and Our POINT on both datasets. You can use these results directly.
 
 
-
-=======
-# POINT
-Code for CVPR2019 "Learning to Learn Relation for Important People Detection in Still Images "
->>>>>>> dabb457d6ae06d37ba9a49176c690663ffd8db5d
