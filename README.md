@@ -41,11 +41,11 @@ As we mentioned in the paper, we use the interior and exterior patches and the l
     python GetNCAAImageFace.py (For NCAA Dataset)
 The picture below is an illustration of extracting the exterior patch on the MS Dataset (left) and the NCAA Dataset (right).
 
-<center><img src=figures/Exterior_MS.jpg height="300" />  <img src=figures/Exterior_NCAA.jpg height="300" /></center>
+<center><img src=figures/Exterior_MS.jpg width="150" />  <img src=figures/Exterior_NCAA.jpg width="150" /></center>
 
 
 ### **Train**
-Please enter the main folder, and run<br>
+Run the below conmmand to train the POINT<br>
 
     python POINT_train.py --h 4 --N 2
 where "--h 4 " specifies the number of relation submodule and the "--N 2" for the number of relation module.
