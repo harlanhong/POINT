@@ -1,7 +1,7 @@
 ## POINT 
 This repository contains an official pytorch implementation for the following paper:<br>
 [Learning to Learn Relation for Important People Detection in Still Images (CVPR 2019)](http://weihonglee.github.io/Projects/POINT/POINT.htm). [Wei-Hong Li](https://weihonglee.github.io/), Fa-Ting Hong, [Wei-Shi Zheng](http://isee.sysu.edu.cn/~zhwshi/)
-![avatar](figures/FrameworkDetail.jpg)
+![avatar](figures/FrameworkDetail.pdf)
 POINT, deep im**PO**rtance relat**I**on **N**e**T**work, is the first to investigate deep learning for exploring and encoding the relation features and exploiting them for important ppeople detection and achieves state-of-the-art performance on two public datasets for which verify its efficacy for important people detection.
 <!--TODO-->
 ### **Citation**
