@@ -41,7 +41,7 @@ As we mentioned in the paper, we use the interior and exterior patches and the l
     python GetNCAAImageFace.py (For NCAA Dataset)
 The picture below is an illustration of extracting the exterior patch on the MS Dataset (left) and the NCAA Dataset (right).
 
-<center class="half"><img src=figures/Exterior_MS.jpg height="200"><img src=figures/Exterior_NCAA.jpg height="200"></center>
+<center class="half"><img src=figures/Exterior_MS.jpg width="200"><img src=figures/Exterior_NCAA.jpg width="200"></center>
 
 
 ### **Train**
