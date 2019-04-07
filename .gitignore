@@ -1,0 +1,13 @@
+#image
+data
+#model
+*.pkl
+
+#result
+resultFile
+
+*.pyc
+
+*.txt
+
+*.pdf
