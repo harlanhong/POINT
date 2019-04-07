@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## POINT 
 This repository contains an official pytorch implementation for the following paper:<br>
 [Learning to Learn Relation for Important People Detection in Still Images (CVPR 2019)](http://weihonglee.github.io/Projects/POINT/POINT.htm). [Wei-Hong Li](https://weihonglee.github.io/), Fa-Ting Hong, [Wei-Shi Zheng](http://isee.sysu.edu.cn/~zhwshi/)
@@ -72,3 +73,7 @@ We also provide [results (CMC)](https://uoe-my.sharepoint.com/:f:/g/personal/s17
 
 
 
+=======
+# POINT
+Code for CVPR2019 "Learning to Learn Relation for Important People Detection in Still Images "
+>>>>>>> dabb457d6ae06d37ba9a49176c690663ffd8db5d
