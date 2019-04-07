@@ -42,7 +42,7 @@ As we mentioned in the paper, we use the interior and exterior patches and the l
 The picture below is an illustration of extracting the exterior patch on the MS Dataset (left) and the NCAA Dataset (right).
 
 
-<center><img src=figures/Exterior_MS.jpg height="150"><img src=figures/Exterior_NCAA.jpg height="150"></center>
+<img src=figures/Exterior_MS.jpg height="150"><img src=figures/Exterior_NCAA.jpg height="150">
 
 
 ### **Train**
