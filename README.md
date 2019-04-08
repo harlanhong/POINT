@@ -33,7 +33,7 @@ Download the [MS/NCAA Dataset](https://weihonglee.github.io/Projects/PersonRank.
         - README.md
 ### **Data Prepare**
 
-As we mentioned in the paper, we use the interior and exterior patches and the location heat map. To train the POINT, we first extract those patches from the original images. As the detectors used to detect persons in MS Dataset and NCAA Dataset are different, we provide two script to extract those patches:
+As we mentioned in the paper, we use the interior and exterior patches and the location heat map. To train the POINT, we first extract those patches from the original images. As the detectors used to detect persons in MS Dataset and NCAA Dataset are different, we provide two different scripts to extract those patches:
 
     python GetMSImageFace.py (For Ms Dataset)
 **or**
