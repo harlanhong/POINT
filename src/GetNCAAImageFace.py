@@ -18,12 +18,12 @@ import scipy.io as scio
 SIZE_WIDTH = 224
 SIZE_HEIGHT = 224
 #the directory save you preprocess data
-saveDir = './data/NCAADataSet_process/'
+saveDir = '../data/NCAADataSet_process/'
 if not os.path.exists(saveDir):
     os.makedirs(saveDir)
 #The dataset
-matFile = 'data/NCAADataSet/data/annotations'
-ImagePath = 'data/NCAADataSet/images/'
+matFile = '/home/share/fating/OriginalDataset/NCAA/data/annotations'
+ImagePath = '/home/share/fating/OriginalDataset/NCAA/Images/'
 data = scio.loadmat(matFile)
 train = data['train']
 val = data['val']
@@ -37,14 +37,14 @@ testSet=[]
 valSet=[]
 
 #process train set
+print(num_train,num_val,num_test)
 for i in range(num_train):
     name = train[0,i]['name'][0]
     print('Converting the %dth Image %s' % (i,name))
     width = train[0,i]['width'][0][0]
-    height = train[0,i]['height'][0][0]
-    foldName = name[:4]   
-    trainSet.append(int(foldName))
-    continue
+    height = train[0,i]['Height'][0][0]
+    foldName = name[:4]
+    trainSet.append(foldName)
     FaceFolderName = saveDir + 'Image_'+foldName+ '/Face'
     if not os.path.exists(FaceFolderName):
         os.makedirs(FaceFolderName)
@@ -57,24 +57,24 @@ for i in range(num_train):
     FullImgFolderName = saveDir + 'Image_'+foldName + '/Image'
     if not os.path.exists(FullImgFolderName):
         os.makedirs(FullImgFolderName)
-    NumFace = train[0,i]['Face'].shape[1]
+    NumFace = train[0,i]['player'].shape[1]
     img = Image.open(ImagePath+'train/'+name).convert('RGB')
     imgCopy = img.resize([SIZE_WIDTH,SIZE_HEIGHT])
     for j in range(NumFace):
-        Rect = train[0,i]['Face'][0,j]['rect']
+        Rect = train[0,i]['player'][0,j]['rect']
         Rect.resize(4,)
-        train[0,i]['Face'][0,j]['label'].resize(1,)
-        label = train[0,i]['Face'][0,j]['label'][0]
+        train[0,i]['player'][0,j]['label'].resize(1,)
+        label = train[0,i]['player'][0,j]['label'][0]
         x, y, w, h = int(Rect[0]), int(Rect[1]), int(Rect[2]), int(Rect[3])
         xMin = max(1,int(x))
         xMax = min(width,int(x+w))
         yMin = max(1, int(y))
         yMax = min(height, int(y+h))
 
-        c_xMin = int(max(1,int(x-w)))
-        c_xMax = int(min(width, int(x+2*w)))
-        c_yMin = max(1,y-h)
-        c_yMax = min(height, y+5*h)
+        c_xMin = int(max(1,int(x-0.5*w)))
+        c_xMax = int(min(width, int(x+1.5*w)))
+        c_yMin = max(1,int(y-0.5*h))
+        c_yMax = min(height, int(y+1.5*h))
         TempFace = img.crop([xMin,yMin,xMax,yMax]).resize([SIZE_WIDTH,SIZE_HEIGHT])
         No_Face = '0' + str(j)
         FaceName = FaceFolderName+'/' + 'Image_' + foldName + \
@@ -102,11 +102,10 @@ for i in range(num_train):
 for i in range(num_val):
     print('Converting the %dth Image' % (i))
     name = val[0,i]['name'][0]
-    width = val[0,i]['width'][0][0]
-    height = val[0,i]['height'][0][0]
+    height = val[0,i]['Height'][0][0]
     foldName = name[:4]   
-    valSet.append(int(foldName))
-    continue
+    valSet.append(foldName)
+ 
     FaceFolderName = saveDir + 'Image_'+foldName+ '/Face'
     if not os.path.exists(FaceFolderName):
         os.makedirs(FaceFolderName)
@@ -119,24 +118,24 @@ for i in range(num_val):
     FullImgFolderName = saveDir + 'Image_'+foldName + '/Image'
     if not os.path.exists(FullImgFolderName):
         os.makedirs(FullImgFolderName)
-    NumFace = val[0,i]['Face'].shape[1]
+    NumFace = val[0,i]['player'].shape[1]
     img = Image.open(ImagePath+'val/'+name).convert('RGB')
     imgCopy = img.resize([SIZE_WIDTH,SIZE_HEIGHT])
     for j in range(NumFace):
-        Rect = val[0,i]['Face'][0,j]['rect']
+        Rect = val[0,i]['player'][0,j]['rect']
         Rect.resize(4,)
-        val[0,i]['Face'][0,j]['label'].resize(1,)
-        label = val[0,i]['Face'][0,j]['label'][0]
+        val[0,i]['player'][0,j]['label'].resize(1,)
+        label = val[0,i]['player'][0,j]['label'][0]
         x, y, w, h = int(Rect[0]), int(Rect[1]), int(Rect[2]), int(Rect[3])
         xMin = max(1,int(x))
         xMax = min(width,int(x+w))
         yMin = max(1, int(y))
         yMax = min(height, int(y+h))
 
-        c_xMin = int(max(1,int(x-w)))
-        c_xMax = int(min(width, int(x+2*w)))
-        c_yMin = max(1,y-h)
-        c_yMax = min(height, y+5*h)
+        c_xMin = int(max(1,int(x-0.5*w)))
+        c_xMax = int(min(width, int(x+1.5*w)))
+        c_yMin = max(1,int(y-0.5*h))
+        c_yMax = min(height, int(y+1.5*h))
         TempFace = img.crop([xMin,yMin,xMax,yMax]).resize([224,224])
         No_Face = '0' + str(j)
         FaceName = FaceFolderName+'/' + 'Image_' + foldName + \
@@ -165,10 +164,9 @@ for i in range(num_test):
     print('Converting the %dth Image' % (i))
     name = test[0,i]['name'][0]
     width = test[0,i]['width'][0][0]
-    height = test[0,i]['height'][0][0]
+    height = test[0,i]['Height'][0][0]
     foldName = name[:4]   
-    testSet.append(int(foldName))
-    continue
+    testSet.append(foldName)
     FaceFolderName = saveDir + 'Image_'+foldName+ '/Face'
     if not os.path.exists(FaceFolderName):
         os.makedirs(FaceFolderName)
@@ -181,25 +179,25 @@ for i in range(num_test):
     FullImgFolderName = saveDir + 'Image_'+foldName + '/Image'
     if not os.path.exists(FullImgFolderName):
         os.makedirs(FullImgFolderName)
-    NumFace = test[0,i]['Face'].shape[1]
+    NumFace = test[0,i]['player'].shape[1]
     img = Image.open(ImagePath+'test/'+name).convert('RGB')
     img = img.resize([width,height])
     imgCopy = img.resize([SIZE_WIDTH,SIZE_HEIGHT])
     for j in range(NumFace):
-        Rect = test[0,i]['Face'][0,j]['rect']
+        Rect = test[0,i]['player'][0,j]['rect']
         Rect.resize(4,)
-        test[0,i]['Face'][0,j]['label'].resize(1,)
-        label = test[0,i]['Face'][0,j]['label'][0]
+        test[0,i]['player'][0,j]['label'].resize(1,)
+        label = test[0,i]['player'][0,j]['label'][0]
         x, y, w, h = int(Rect[0]), int(Rect[1]), int(Rect[2]), int(Rect[3])
         xMin = max(1,int(x))
         xMax = min(width,int(x+w))
         yMin = max(1, int(y))
         yMax = min(height, int(y+h))
 
-        c_xMin = int(max(1,int(x-w)))
-        c_xMax = int(min(width, int(x+2*w)))
-        c_yMin = max(1,y-h)
-        c_yMax = min(height, y+5*h)
+        c_xMin = int(max(1,int(x-0.5*w)))
+        c_xMax = int(min(width, int(x+1.5*w)))
+        c_yMin = max(1,int(y-0.5*h))
+        c_yMax = min(height, int(y+1.5*h))
         TempFace = img.crop([xMin,yMin,xMax,yMax]).resize([224,224])
         No_Face = '0' + str(j)
         FaceName = FaceFolderName+'/' + 'Image_' + foldName + \
@@ -223,4 +221,4 @@ for i in range(num_test):
                        + foldName + '_Img_' + No_Face[len(No_Face) - 2:] + \
                        '_Label_' + str(int(label)) + '.jpg'
         imgCopy.save(ImgName)
-np.save('NCAAindex.npy', {'train': trainSet, 'val': valSet, 'test': testSet})
+np.save('../data/NCAAindex.npy', {'train': trainSet, 'val': valSet, 'test': testSet})

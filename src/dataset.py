@@ -33,8 +33,8 @@ class RelatinNetCMSIP(Dataset): #img+face+faceCont+coor
         self.train = []
         self.num_train = len(index_train)
         for i in range(self.num_train):
-            ind = index_train[i] - 1
-            ImageFolder_ = ImageFolderList[ind]
+            ind = index_train[i]
+            ImageFolder_ = root+'/Image_'+str(ind)
             src = sorted(glob(ImageFolder_ + '/Image/Image*'))
             Faces = sorted(glob(ImageFolder_ + '/Face/Image*'))
             FaceConts = sorted(glob(ImageFolder_ + '/FaceCont/Image*'))
@@ -52,8 +52,8 @@ class RelatinNetCMSIP(Dataset): #img+face+faceCont+coor
         self.test = []
         self.num_test = len(index_test)
         for i in range(self.num_test):
-            ind = index_test[i] - 1
-            ImageFolder_ = ImageFolderList[ind]
+            ind = index_test[i]
+            ImageFolder_ = root+'/Image_'+str(ind)
             src = sorted(glob(ImageFolder_ + '/Image/Image*'))
             Faces = sorted(glob(ImageFolder_ + '/Face/Image*'))
             FaceConts = sorted(glob(ImageFolder_ + '/FaceCont/Image*'))
@@ -69,8 +69,8 @@ class RelatinNetCMSIP(Dataset): #img+face+faceCont+coor
         self.val = []
         self.num_val = len(index_val)
         for i in range(self.num_val):
-            ind = index_val[i] - 1
-            ImageFolder_ = ImageFolderList[ind]
+            ind = index_val[i]
+            ImageFolder_ = root+'/Image_'+str(ind)
             src = sorted(glob(ImageFolder_ + '/Image/Image*'))
             Faces = sorted(glob(ImageFolder_ + '/Face/Image*'))
             FaceConts = sorted(glob(ImageFolder_ + '/FaceCont/Image*'))
