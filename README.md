@@ -65,10 +65,10 @@ To test the trained model, we provide a script to evaluate the important people 
 
 ### **Our Trained Model**
 
-We provide our [trained models](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/Ej3oCyjKp65JnLb_auoNgZ8BuwPuDTiMqzHN6YbjNfTUow?e=F8lcOl) (both on the MS Dataset and NCAA Dataset) and you can use the trained model directly.
+We provide our [trained models](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/Ej3oCyjKp65JnLb_auoNgZ8BdgxI6kiyf0Xz-hYlHSYulQ?e=mX9jaC) (both on the MS Dataset and NCAA Dataset) and you can use the trained model directly.
 
 ### **Results**
 
-We also provide [results (CMC)](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/EkwsFYZPPNpJsYR1DOIkIL4BqAmNqnpoGU9GEtMrqXDx2Q?e=RWiq68) of compared methods and Our POINT on both datasets. You can use these results directly.
+We also provide [results (CMC)](https://uoe-my.sharepoint.com/:f:/g/personal/s1798461_ed_ac_uk/EkwsFYZPPNpJsYR1DOIkIL4BI4kf10ApIjyQTLQLC-9rZw?e=uY1fMK) of compared methods and Our POINT on both datasets. You can use these results directly.
 
 
